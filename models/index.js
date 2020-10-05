@@ -15,4 +15,4 @@ mongoose.connection.on('error' , (err) => console.log(err));
 
 module.exports = {
     Cat: require('./Cat')
-}
+};

@@ -24,8 +24,8 @@ const catSchema = new Schema ({
     }
 } , {timestamps: true});
 
-module.exports = mongoose.model('Cat' , catSchema);
-
+const Cat = mongoose.model('Cat' , catSchema);
+module.exports = Cat;
 
 
 // const cats = [{
