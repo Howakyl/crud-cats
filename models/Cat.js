@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const CatSchema = new Schema ({
+const catSchema = new Schema ({
     name: {
         type: String,
         required: true,
@@ -24,7 +24,7 @@ const CatSchema = new Schema ({
     }
 } , {timestamps: true});
 
-module.exports = mongoose.model('Fruit' , CatSchema);
+module.exports = mongoose.model('Cat' , catSchema);
 
 
 
