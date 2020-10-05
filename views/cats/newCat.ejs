@@ -7,5 +7,30 @@
 </head>
 <body>
     <h1>Add a new cat</h1>
+
+    <form action="/cats" method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="breed">Breed</label>
+            <input type="text" id="breed" name="breed">
+        </div>
+        <div>
+            <label for="color">Color</label>
+            <input type="text" id="color" name="color">
+        </div>
+        <div>
+            <label for="likes">Likes</label>
+            <input type="text" id="likes" name="likes">
+        </div>
+        <div>
+            <label for="longHaired">Long Haired?</label>
+            <input type="checkbox" id="longHaired" name="longHaired">
+        </div>
+
+        <input type="submit" value="Create Cat">
+    </form>
 </body>
 </html>

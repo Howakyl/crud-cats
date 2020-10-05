@@ -10,9 +10,9 @@ router.get('/' , (req,res) => res.send('these are all the cats!'));
 
 
 //NEW Cat - this page will show the page to create a new cat
-router.get('/new', (req, res) => res.send('make a new cat!'));
+router.get('/new', (req, res) => res.render('cats/newCat'));
 
-
+//CREATE Cat - This will add a Cat to the database
 
 
 
