@@ -13,7 +13,15 @@ router.get('/' , (req,res) => res.send('these are all the cats!'));
 router.get('/new', (req, res) => res.render('cats/newCat'));
 
 //CREATE Cat - This will add a Cat to the database
+router.post('/', (req, res) => {
+    req.body.longHaired = req.body.longHaired === 'on';
 
+    db.Cat.create(req.body, (err, newCat) => {
+        if (err) return console.log(err);
+
+        res.send('Cat added!');
+    });
+});
 
 
 module.exports = router;
