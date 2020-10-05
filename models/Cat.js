@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const catSchema = new Schema ({
+const catSchema = new mongoose.Schema ({
     name: {
         type: String,
         required: true,
@@ -48,4 +47,4 @@ module.exports = Cat;
 //     longHaired: false,
 // }];
 
-module.exports = cats;
+// module.exports = cats;

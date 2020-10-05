@@ -5,7 +5,8 @@ const app = express();
 const PORT = 4000;
 
 app.set('view engine' , 'ejs');
-//SET CAT CONTROLLER HERE
+
+//SET CAT CONTROLLER 
 const catsController = require('./controllers/catsController');
 
 ////////////////////////////////////////
@@ -13,10 +14,7 @@ const catsController = require('./controllers/catsController');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
-
-
 ///////////////////////////////////////
-
 
 //HOME
 app.get('/' , (req,res) => res.render('index'));
