@@ -17,3 +17,5 @@ const cats = [{
     likes: ['chasing mice' , 'climbing up to high places'],
     longHaired: false,
 }];
+
+module.exports = cats;
