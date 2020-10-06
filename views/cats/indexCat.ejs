@@ -7,5 +7,15 @@
 </head>
 <body>
     <h1>All Cats</h1>
+
+    <ul>
+        <% for (let i = 0; i < cats.length; i++) { %>
+            <li style="margin-bottom: 20px;">
+                <a href="/cats/<%= cats[i]._id %>">
+                    <%= cats[i].name %>
+                </a>
+            </li>
+        <% } %>
+    </ul>
 </body>
 </html>

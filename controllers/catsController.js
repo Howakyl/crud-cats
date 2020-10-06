@@ -6,7 +6,15 @@ const db = require('../models/index');
 
 
 //Cat INDEX - shows all cats in DB
-router.get('/' , (req,res) => res.send('these are all the cats!'));
+router.get('/' , (req,res) => {
+    db.Cat.find({} , (err, allCats) => {
+        if (err) console.log(err);
+
+        res.render('cats/indexCat' , {
+            cats: allCats
+        });
+    });
+});
 
 
 //NEW Cat - this page will show the page to create a new cat
@@ -23,5 +31,9 @@ router.post('/', (req, res) => {
     });
 });
 
+//SHOW CURRENT CAT
+// router.get('/:catId' , (req, res) => {
+//     db.Cat.find
+// })
 
 module.exports = router;
