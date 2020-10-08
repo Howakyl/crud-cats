@@ -9,5 +9,22 @@
     <h1>Current Cat</h1>
 
     <h4>Name: <%= cat.name %></h4>
+    <h4>Breed: <%= cat.breed %></h4>
+    <h4>Color: <%= cat.color %></h4>
+    <% if (cat.longHaired) { %>
+            <h4><%= cat.name %> is Long-Haired!</h4>
+    <% } else { %>
+            <h4><%= cat.name %> is Short-Haired!</h4>
+    <% } %>
+
+    <section>
+        <a href="/cats/<%= cat._id %>/edit">
+            <button>Edit</button>
+        </a>
+
+        <form action="/catss/<%= cat._id %>?_method=DELETE" method="post">
+            <input type="submit" value="Delete Cat"/>
+        </form>
+    </section>
 </body>
 </html>

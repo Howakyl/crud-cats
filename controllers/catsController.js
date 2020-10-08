@@ -27,13 +27,20 @@ router.post('/', (req, res) => {
     db.Cat.create(req.body, (err, newCat) => {
         if (err) return console.log(err);
 
-        res.send('Cat added!');
+        res.redirect('/cats')
     });
 });
 
 //SHOW CURRENT CAT
-// router.get('/:catId' , (req, res) => {
-//     db.Cat.find
-// })
+router.get('/:catId' , (req, res) => {
+    db.Cat.findById(req.params.catId , (err, currentCat) => {
+        if (err) return console.log(err);
+        
+        const context = {
+            cat: currentCat
+        }
+        res.render('cats/showCat' , context);
+    });
+});
 
 module.exports = router;
