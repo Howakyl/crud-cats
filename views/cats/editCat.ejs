@@ -15,19 +15,19 @@
         </div>
         <div>
             <label for="breed">Breed</label>
-            <input type="text" id="breed" name="breed">
+            <input type="text" id="breed" name="breed" value="<%= cat.breed %>">
         </div>
         <div>
             <label for="color">Color</label>
-            <input type="text" id="color" name="color">
+            <input type="text" id="color" name="color" value="<%= cat.color %>">
         </div>
         <div>
             <label for="likes">Likes</label>
-            <input type="text" id="likes" name="likes">
+            <input type="text" id="likes" name="likes" value="<%= cat.llikes %>">
         </div>
         <div>
             <label for="longHaired">Long Haired?</label>
-            <input type="checkbox" id="longHaired" name="longHaired">
+            <input type="checkbox" id="longHaired" name="longHaired" value="<%= cat.longHaired %>" <%= longHaired ? 'checked' : '' %> />
         </div>
 
         <input type="submit" value="Update Cat">

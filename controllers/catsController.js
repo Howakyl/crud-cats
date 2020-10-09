@@ -45,11 +45,13 @@ router.get('/:catId' , (req, res) => {
 
 //GET EDIT CAT
 router.get('/:catId/edit' , (req,res) => {
+
     db.Cat.findById(req.params.catId, (err, currentCat) => {
         if (err) return console.log(err);
 
         const context = {
             cat: currentCat,
+            longHaired: req.body.longHaired === 'on' ? true : false
         };
 
         res.render('cats/editCat' , context);
@@ -58,7 +60,18 @@ router.get('/:catId/edit' , (req,res) => {
 
 
 //PUT UPDATE CAT
+router.put('/:catId' , (req,res) => {
+    db.Cat.findByIdAndUpdate(
+        req.params.catId,
+        req.body,
+        {new: true},
+        (err, updatedCat) => {
+            if (err) return console.log(err);
 
+            res.redirect(`/cats/${updatedCat._id}`);
+        }
+    );
+});
 
 //DELETE - REMOVE CAT
 router.delete('/:catId' , (req,res) => {
