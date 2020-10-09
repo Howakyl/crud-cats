@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Cats</title>
+</head>
+<body>
+    <h1>Edit Cat</h1>
+
+    <form action="/cats/<%= cat._id %>?_method=PUT" method="post">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="<%= cat.name %>">
+        </div>
+        <div>
+            <label for="breed">Breed</label>
+            <input type="text" id="breed" name="breed">
+        </div>
+        <div>
+            <label for="color">Color</label>
+            <input type="text" id="color" name="color">
+        </div>
+        <div>
+            <label for="likes">Likes</label>
+            <input type="text" id="likes" name="likes">
+        </div>
+        <div>
+            <label for="longHaired">Long Haired?</label>
+            <input type="checkbox" id="longHaired" name="longHaired">
+        </div>
+
+        <input type="submit" value="Update Cat">
+    </form>
+</body>
+</html>

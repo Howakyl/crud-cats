@@ -43,6 +43,23 @@ router.get('/:catId' , (req, res) => {
     });
 });
 
+//GET EDIT CAT
+router.get('/:catId/edit' , (req,res) => {
+    db.Cat.findById(req.params.catId, (err, currentCat) => {
+        if (err) return console.log(err);
+
+        const context = {
+            cat: currentCat,
+        };
+
+        res.render('cats/editCat' , context);
+    });
+});
+
+
+//PUT UPDATE CAT
+
+
 //DELETE - REMOVE CAT
 router.delete('/:catId' , (req,res) => {
     db.Cat.findByIdAndDelete(req.params.catId, (err, deletedCat) => {
