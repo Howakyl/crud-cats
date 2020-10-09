@@ -43,4 +43,15 @@ router.get('/:catId' , (req, res) => {
     });
 });
 
+//DELETE - REMOVE CAT
+router.delete('/:catId' , (req,res) => {
+    db.Cat.findByIdAndDelete(req.params.catId, (err, deletedCat) => {
+        if (err) return console.log(err);
+
+        console.log('deleted cat:' , deletedCat);
+        res.redirect('/cats');
+    });
+});
+
+
 module.exports = router;
