@@ -8,7 +8,7 @@
 <body>
     <h1>Edit Cat</h1>
 
-    <form action="/cats/<%= cat._id %>?_method=PUT" method="post">
+    <form action="/cats/<%= cat.id %>?_method=PUT" method="post">
         <div>
             <label for="name">Name</label>
             <input type="text" id="name" name="name" value="<%= cat.name %>">
@@ -23,11 +23,11 @@
         </div>
         <div>
             <label for="likes">Likes</label>
-            <input type="text" id="likes" name="likes" value="<%= cat.llikes %>">
+            <input type="text" id="likes" name="likes" value="<%= cat.likes %>">
         </div>
         <div>
             <label for="longHaired">Long Haired?</label>
-            <input type="checkbox" id="longHaired" name="longHaired" value="<%= cat.longHaired %>" <%= longHaired ? 'checked' : '' %> />
+            <input type="checkbox" id="longHaired" name="longHaired" <%= cat.longHaired ? 'checked' : '' %> />
         </div>
 
         <input type="submit" value="Update Cat">

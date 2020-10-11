@@ -61,13 +61,15 @@ router.get('/:catId/edit' , (req,res) => {
 
 //PUT UPDATE CAT
 router.put('/:catId' , (req,res) => {
+    req.body.longHaired = req.body.longHaired === 'on';
+
     db.Cat.findByIdAndUpdate(
         req.params.catId,
         req.body,
         {new: true},
         (err, updatedCat) => {
             if (err) return console.log(err);
-
+            console.log(updatedCat);
             res.redirect(`/cats/${updatedCat._id}`);
         }
     );
