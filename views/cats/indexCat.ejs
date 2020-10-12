@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
     <title>All Cats</title>
 </head>
 <body>
-    <h1>All Cats</h1>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/cats">All Cats</a></li>
-        <li><a href="/cats/new">New Cat</a></li>
-    </ul>
-    <ul>
+    <%- include('../partials/navbar') %>
+
+    <ul class="list-group container-sm mt-5">
         <% for (let i = 0; i < cats.length; i++) { %>
-            <li style="margin-bottom: 20px;">
+            <li style="margin-bottom: 20px;" class="list-group-item text-center">
                 <a href="/cats/<%= cats[i]._id %>">
                     <%= cats[i].name %>
                 </a>

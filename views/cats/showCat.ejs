@@ -8,25 +8,23 @@
     <title>Current Cat</title>
 </head>
 <body>
-    <h1>Current Cat</h1>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/cats">All Cats</a></li>
-        <li><a href="/cats/new">New Cat</a></li>
-    </ul>
-    
-    <h4>Name: <%= cat.name %></h4>
-    <h4>Breed: <%= cat.breed %></h4>
-    <h4>Color: <%= cat.color %></h4>
-    <% if (cat.longHaired) { %>
-            <h4><%= cat.name %> is Long-Haired!</h4>
-    <% } else { %>
-            <h4><%= cat.name %> is Short-Haired!</h4>
-    <% } %>
+    <h1 class="text-center bg-dark mb-0 text-light">Current Cat</h1>
+    <%- include('../partials/navbar') %>
 
-    <section>
+    <div class="d-flex flex-column align-items-center">
+        <h4>Name: <%= cat.name %></h4>
+        <h4>Breed: <%= cat.breed %></h4>
+        <h4>Color: <%= cat.color %></h4>
+        <% if (cat.longHaired) { %>
+                <h4><%= cat.name %> is Long-Haired!</h4>
+        <% } else { %>
+                <h4><%= cat.name %> is Short-Haired!</h4>
+        <% } %>
+    </div>
+
+    <section class="d-flex flex-column align-items-center">
         <a href="/cats/<%= cat._id %>/edit">
-            <button>Edit</button>
+            <input type="submit" value="Edit Cat"/>
         </a>
 
         <form action="/cats/<%= cat._id %>?_method=DELETE" method="post">
